@@ -85,7 +85,7 @@ print('Capture Init...')
 cap = cv2.VideoCapture('/dev/video0',cv2.CAP_V4L2)
 
 cap_width : int = 256;
-cap_height : int = 192;
+cap_height : int = 196;
 cap_fps : int = 25;
 cap.set(cv2.CAP_PROP_FRAME_WIDTH, cap_width)
 cap.set(cv2.CAP_PROP_FRAME_HEIGHT, cap_height)
