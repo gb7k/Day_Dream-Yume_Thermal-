@@ -54,8 +54,8 @@ graph LR;
 ```
 
 > [!TIP]
-> mini2とP2Proの違いについて
-> 
+> mini2とP2Proの違いについて  
+> ![image](https://github.com/gb7k/Day_Dream-Yume_Thermal-/assets/164740841/ce1c5e60-2de1-43c8-a5fe-be46fd75f8cd)  
 > mini2
 >   - 256x196で生画像を取得可能、256x192で正規化済の画像を取得可能
 >   - アウトライン表示の場合、20fpsへ処理を落とす事で処理落ちに対応
