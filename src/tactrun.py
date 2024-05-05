@@ -18,7 +18,7 @@ if __name__ == "__main__":
 		if button1 == False and button2 == True:
 			cmd = "python3 /root/testpy/mini2.py"
 		if button1 == False and button2 == False:
-			cmd = "python3 /root/testpy/mini2_contours_Xfps.py"
+			cmd = "python3 /root/yume/mini2_contours_Xfps.py"
 		if cmd != "":
 			ret = os.popen(cmd).readline().strip()
 			print(ret)
