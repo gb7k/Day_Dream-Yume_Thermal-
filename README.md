@@ -1,8 +1,8 @@
 # 夢ビジョン サーマルフュージョンプログラム"Day Dream"
 
-![PXL_20240429_124756677](https://github.com/gb7k/Day_Dream-Yume_Thermal-/assets/164740841/6e4a57a3-1844-4059-a2ad-3e21134999ec)
-![PXL_20240429_124831499](https://github.com/gb7k/Day_Dream-Yume_Thermal-/assets/164740841/ee4cc092-58f4-4954-8db3-99b0e7b9c95e)
-![PXL_20240429_124856869](https://github.com/gb7k/Day_Dream-Yume_Thermal-/assets/164740841/decfbb5f-16f3-4456-905a-a6ab53b8fdce)
+<img alt="Normal" src="https://github.com/gb7k/Day_Dream-Yume_Thermal-/assets/164740841/6e4a57a3-1844-4059-a2ad-3e21134999ec" width="300px">
+<img alt="Thermal" src="https://github.com/gb7k/Day_Dream-Yume_Thermal-/assets/164740841/ee4cc092-58f4-4954-8db3-99b0e7b9c95e" width="300px">
+<img alt="contours" src="https://github.com/gb7k/Day_Dream-Yume_Thermal-/assets/164740841/decfbb5f-16f3-4456-905a-a6ab53b8fdce" width="300px">
 
 本プログラムおよび基板は特定のナイトビジョンカメラにサーマル映像を合成するための装備一式を作成するためのものである。
 
