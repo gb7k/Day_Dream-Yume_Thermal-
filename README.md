@@ -1,4 +1,4 @@
-# 夢ビジョン サーマルフュージョンプログラム"Day Dream"
+# サーマルフュージョンプログラム"Day Dream"
 
 <img alt="Normal" src="https://github.com/gb7k/Day_Dream-Yume_Thermal-/assets/164740841/6e4a57a3-1844-4059-a2ad-3e21134999ec" width="300px">  
 <img alt="Thermal" src="https://github.com/gb7k/Day_Dream-Yume_Thermal-/assets/164740841/ee4cc092-58f4-4954-8db3-99b0e7b9c95e" width="300px">
