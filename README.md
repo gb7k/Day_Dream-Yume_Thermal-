@@ -43,8 +43,8 @@ https://github.com/Qoo622/3D-print/
 |コネクタかしめ工具|ハーネス作成用|XHコネクタ対応のもの|
 |はんだ付けセット|基板制作用|2.54mmピッチのはんだ付けなのでなんでもよい|
 
+![image](https://github.com/gb7k/Day_Dream-Yume_Thermal-/assets/164740841/e46d3962-854c-4d6f-b494-67b4c72e88df)
 
-<img alt="contours" src="https://github.com/gb7k/Day_Dream-Yume_Thermal-/assets/164740841/a9aa6a01-aec4-4dcd-971e-112b1c26115d" width="400px">
 
 ```mermaid
 graph LR;
