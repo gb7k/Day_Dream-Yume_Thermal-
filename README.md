@@ -43,6 +43,9 @@ https://github.com/Qoo622/3D-print/
 |コネクタかしめ工具|ハーネス作成用|XHコネクタ対応のもの|
 |はんだ付けセット|基板制作用|2.54mmピッチのはんだ付けなのでなんでもよい|
 
+
+<img alt="contours" src="https://github.com/gb7k/Day_Dream-Yume_Thermal-/assets/164740841/a9aa6a01-aec4-4dcd-971e-112b1c26115d" width="400px">
+
 ```mermaid
 graph LR;
     A[UVC Thermal CAM]-->|USBケーブル|PiZ2;
@@ -80,6 +83,8 @@ graph LR;
 
 ## ハーネスの作成
 LCDと基板を接続するハーネスを作成する。
+
+![image](https://github.com/gb7k/Day_Dream-Yume_Thermal-/assets/164740841/bea193f7-3e1f-4f38-b643-17ba9bb846f1)
 
 ハーネスの長さはおそらく6,70cmが限度だと思われるので注意すること。
 
@@ -224,10 +229,15 @@ Powerボタンを押しながらAppボタンを押下すると輪郭抽出画面
 サーマル側の投影位置およびサイズの調整はソースコード内の以下の場所で実施している。
 
 `image = cv2.copyMakeBorder(image,15,60,45,90, cv2.BORDER_CONSTANT, value=[0,0,0])`
+
 256x192のサーマル画像を取得後、上記箇所にて余白を上下左右に追加して後段の処理で240x240に圧縮している。
 余白の量を増減させ、ナイトビジョンの映像に合わせる。
 この数値はナイトビジョンに取り付けてあるレンズや、カメラとサーマルユニットの光軸ズレで個々に異なる。
 ある程度の距離の壁に貼るカイロを設置して左上角と右下角の位置を合わせるように調整すると良い。
+
+![image](https://github.com/gb7k/Day_Dream-Yume_Thermal-/assets/164740841/e979d282-71d2-491e-a89a-b8c564bb6e4e)
+
+
 
 ## 現在の問題点と今後の予定
 - 映像の取得やLCDへの送信をマルチスレッド化して処理時間に余裕を持たせたい。
