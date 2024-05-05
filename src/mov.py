@@ -27,7 +27,7 @@ disp._init()
 # Capture Initialize
 print('Capture Init...')
 #cap = cv2.VideoCapture('/dev/video0',cv2.CAP_V4L2)
-cap = cv2.VideoCapture('/root/mov/mov.mp4')
+cap = cv2.VideoCapture('/root/yume/mov.mp4')
 if (cap.isOpened()== False):
     print("ERROR:Read mov")
 
