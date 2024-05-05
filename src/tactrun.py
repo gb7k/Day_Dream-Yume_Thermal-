@@ -16,7 +16,7 @@ if __name__ == "__main__":
 		button2 = GPIO.input(2)
 		cmd = ""
 		if button1 == False and button2 == True:
-			cmd = "python3 /root/testpy/mini2.py"
+			cmd = "python3 /root/yume/mini2.py"
 		if button1 == False and button2 == False:
 			cmd = "python3 /root/yume/mini2_contours_Xfps.py"
 		if cmd != "":
