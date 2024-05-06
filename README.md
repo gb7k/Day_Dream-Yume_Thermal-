@@ -1,18 +1,16 @@
 # サーマルフュージョンプログラム"Day Dream"
+## はじめに
 本プログラムおよび基板は出力に1.54インチのディスプレイを備えた中国製の激安ナイトビジョンカメラにサーマル映像を合成するための装備一式を作成するためのものである。  
-既存のナイトビジョンにハーフミラーを使用して映像を合成し、可視光帯と近赤外帯に加えて熱赤外帯を同時に見ることが出来るデバイスを目指した。
+既存のナイトビジョンにハーフミラーを使用して映像を合成し、可視光帯と近赤外帯に加えて熱赤外帯を同時に見ることが出来る(実物と比較して)安価なデバイスを目指した。
 最初期のプロトタイプでは自作のハーフミラーを使用していたが、あまりにも手間がかかるためこれまた中国製のビームスプリッターに代替した。アリエク様々である  
 
 <img alt="Thermal" src="https://github.com/gb7k/Day_Dream-Yume_Thermal-/assets/164740841/78610c0b-a76a-4d41-a37a-95079c7e3996" width="300px">
 <img alt="Thermal" src="https://github.com/gb7k/Day_Dream-Yume_Thermal-/assets/164740841/8e67dcf2-6838-493a-95bb-916731c72162" width="300px">
 <img alt="Thermal" src="https://github.com/gb7k/Day_Dream-Yume_Thermal-/assets/164740841/7a677934-a34f-4f69-89b8-5b8a53f4bd01" width="400px">
 
-
-
-
 一般的なイメージセンサを使用したナイトビジョンでは赤外線フィルタを取り外しても光の増幅量には限度があり、赤外線ライトを使用する必要がある。  
-そこで、サーマルセンサと映像を合成することで暗所での熱源の特定や完全な暗所における行動能力の獲得を図った。  
-対象ナイトビジョンの購入および筐体の制作に関してはQoo622氏の以下のリポジトリを参照のこと。  
+そこで、サーマルセンサと映像を合成することで完全な暗所におけるIRライトを使用しない行動能力の獲得や暗所での熱源(ヒト、動物など)の特定能力の獲得を図った。  
+対象ナイトビジョンについてや、筐体のデータに関してはQoo622氏の以下のリポジトリを参照のこと。  
 https://github.com/Qoo622/3D-print/
 
 
@@ -136,16 +134,15 @@ LCDと基板を接続するハーネスを作成する。
 
 
 ## 環境構築
-Raspberry Pi ZERO2で実行する為、極力無駄を省いたDietPiを使用する。
+Raspberry Pi ZERO2で実行する為、極力無駄を省いたDietPiを使用する。  
 OSデータをPCにて書き込み後、RPiZ2を無線LANに接続し、RPiZ2上で作業を実施する。
 
 ### オーバークロック
-dietpi-configからPerformance Optionに入りOverclockingを選択、highを選択する。
-
+dietpi-configからPerformance Optionに入りOverclockingを選択、highを選択する。  
 また、CPU Governorを選択しperformanceを選択する。
 
 ### パッケージのインストール
-インストール後、dietPi-Softwareを使用して以下のパッケージを導入する。
+インストール後、dietPi-Softwareを使用して以下のパッケージを導入する。  
 
 |パッケージ番号|説明|
 | --- | --- |
@@ -153,7 +150,7 @@ dietpi-configからPerformance Optionに入りOverclockingを選択、highを選
 |69|Python 3 RPi.GPIO|
 |130|Python 3|
 
-また、aptコマンドで以下のパッケージをインストールする。
+また、aptコマンドで以下のパッケージをインストールする。  
 
 |パッケージ名|説明|
 | --- | --- |
@@ -162,14 +159,14 @@ dietpi-configからPerformance Optionに入りOverclockingを選択、highを選
 |python3-pip|多分インストール済|
 |python3-spidev|多分インストール済|
 
-pipコマンドでST7789のパッケージをインストールする。
-~~面倒~~これしか使わないのでbreak-system-packagesを使っている。
+pipコマンドでST7789のパッケージをインストールする。  
+~~面倒~~これしか使わないのでbreak-system-packagesを使っている。  
 
 `pip3 install --break-system-packages st7789`
 
 ### ファイルのコピー
-適当な場所にファイル一式をコピーする。
-本書の中では/root/yume/以下にすべて格納している体で記載している。
+適当な場所にファイル一式をコピーする。  
+本書の中では/root/yume/以下にすべて格納している体で記載している。  
 
 |ファイル名|説明|
 | --- | --- |
@@ -187,11 +184,9 @@ Raspberry Piは実行中に電源を落とすと起動不能になるため、�
 `dtoverlay=gpio-shutdonw,gpio_pin=2,debounce=3000`
 
 ### 自動起動設定
-RPi上でUVCカメラとしてサーマルユニットを使用する時、uvcvideoドライバをquirks=0x02でロードする必要がある。
-
-`dietpi-autostart`を実行し、14番のCustom script(background~)を選択後以下の内容を書き加える
-
-mov.pyとtactrun.pyは実際にファイルを置いた場所を指定すること。
+RPi上でUVCカメラとしてサーマルユニットを使用する時、uvcvideoドライバをquirks=0x02でロードする必要がある。  
+`dietpi-autostart`を実行し、14番のCustom script(background~)を選択後以下の内容を書き加える  
+mov.pyとtactrun.pyは実際にファイルを置いた場所を指定すること。  
 ```
 sudo sh -c "echo -n\"1-1\" > /sys/bus/usb/drivers/usb/unbind"
 sleep 1
@@ -221,7 +216,7 @@ USBケーブルでサーマルカメラと接続し、基板をRPiZ2へ接続、
 |ボタン名|説明|
 | --- | --- |
 |Power|3秒間押し続けることでシャットダウンを実行|
-|App|サーマルプログラムを実行|
+|App|サーマルプログラムを実行(シャットダウン後に押すとRPiZ2が起動する)|
 |Power+App|アウトラインプログラムを実行|
 |EXIT App|実行中のプログラムを終了|
 |RGB DIPスイッチ|画面の色が変わる、すべてOFFだと画面が点灯しないので注意|
@@ -233,10 +228,12 @@ Powerボタンを押しながらAppボタンを押下すると輪郭抽出画面
 
 
 ## 投影位置調整
-組み立て後、ナイトビジョン映像とサーマル映像の位置合わせを実施する必要がある。
-サーマル側の投影位置およびサイズの調整はソースコード内の以下の場所で実施している。
-
-`image = cv2.copyMakeBorder(image,15,60,45,90, cv2.BORDER_CONSTANT, value=[0,0,0])`
+組み立て後、ナイトビジョン映像とサーマル映像の位置合わせを実施する必要がある。  
+サーマル側の投影位置およびサイズの調整はソースコード内の以下の場所で実施している。  
+```
+image = cv2.copyMakeBorder(image,15,60,45,90, cv2.BORDER_CONSTANT, value=[0,0,0])    
+                                  ↑  ↑  ↑  ↑                                       
+```
 
 256x192のサーマル画像を取得後、上記箇所にて余白を上下左右に追加して後段の処理で240x240に圧縮している。
 余白の量を増減させ、ナイトビジョンの映像に合わせる。
