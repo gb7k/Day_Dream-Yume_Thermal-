@@ -6,7 +6,9 @@
 
 <img alt="Thermal" src="https://github.com/gb7k/Day_Dream-Yume_Thermal-/assets/164740841/78610c0b-a76a-4d41-a37a-95079c7e3996" width="300px">
 <img alt="Thermal" src="https://github.com/gb7k/Day_Dream-Yume_Thermal-/assets/164740841/8e67dcf2-6838-493a-95bb-916731c72162" width="300px">
-<img alt="Thermal" src="https://github.com/gb7k/Day_Dream-Yume_Thermal-/assets/164740841/7a677934-a34f-4f69-89b8-5b8a53f4bd01" width="400px">
+<img alt="Thermal" src="https://github.com/gb7k/Day_Dream-Yume_Thermal-/assets/164740841/7a677934-a34f-4f69-89b8-5b8a53f4bd01" width="400px"> 
+
+最初の試作品  
 
 一般的なイメージセンサを使用したナイトビジョンでは赤外線フィルタを取り外しても光の増幅量には限度があり、赤外線ライトを使用する必要がある。  
 そこで、サーマルセンサと映像を合成することで完全な暗所におけるIRライトを使用しない行動能力の獲得や暗所での熱源(ヒト、動物など)の特定能力の獲得を図った。  対象ナイトビジョンについてや、筐体のデータに関してはQoo622氏の以下のリポジトリを参照のこと。  
@@ -87,11 +89,10 @@ graph LR;
 
 
 ## ハーネスの作成
-LCDと基板を接続するハーネスを作成する。
+LCDと基板を接続するハーネスを作成する。  
+![image](https://github.com/gb7k/Day_Dream-Yume_Thermal-/assets/164740841/40870436-019e-4712-a0b8-ea9f742a42d2)
 
-![image](https://github.com/gb7k/Day_Dream-Yume_Thermal-/assets/164740841/bea193f7-3e1f-4f38-b643-17ba9bb846f1)
-左から1,2,3……と数える。例えば上図の赤色の線は2であるためVCCとなる。
-
+左から1,2,3……と数える。例えば上図の赤色の線は2であるためVCCとなる。  
 ハーネスの長さはおそらく6,70cmが限度だと思われるので注意すること。  
 必要な部材は下記の通りである。  
 |部材名称|個数|型式|
@@ -103,18 +104,6 @@ LCDと基板を接続するハーネスを作成する。
 |ハーネスケーブル|1|KRT AWG28 X 8C|
 
 番号はハウジングの突起を上にしてケーブルから見て左から1,2,3...である。
-
-**LCD側**
-|番号|説明|
-| --- | --- |
-|1|BL|
-|2|CS|
-|3|DC|
-|4|RST|
-|5|SDA|
-|6|SCL|
-|7|VCC|
-|8|GND|
 
 **基板側**
 |番号|説明|
@@ -129,6 +118,18 @@ LCDと基板を接続するハーネスを作成する。
 |8|RST|
 |9|DC|
 |10|BL|
+
+**LCD側**
+|番号|説明|
+| --- | --- |
+|1|BL|
+|2|CS|
+|3|DC|
+|4|RST|
+|5|SDA|
+|6|SCL|
+|7|VCC|
+|8|GND|
 
 
 ## 環境構築
@@ -244,9 +245,10 @@ image = cv2.copyMakeBorder(image,15,60,45,90, cv2.BORDER_CONSTANT, value=[0,0,0]
 
 ## 現在の問題点と今後の予定
 - 映像の取得やLCDへの送信をマルチスレッド化して処理時間に余裕を持たせたい。
-- そもそもPythonが遅いのでC言語で作り直したい。
+    - 現状は実行時間がかなりカツカツ
+    - そもそもPythonが遅いのでC言語で作り直したい。
+- 実行時間に余裕ができたら磁力センサを乗せてHUD表示なんかも楽しそう。
 - ESP32あたりに移植出来ないものか……しかしアレはOpenCVが走らない……。
-- 磁力センサを乗せてHUD表示なんかも楽しそう。
 - 280x240の液晶を使用しドットバイドット表示したレールマウントなサーマルデバイスの作成、したいね。
 
 
