@@ -53,7 +53,7 @@ https://github.com/Qoo622/3D-print/tree/master/Yume-Vision/YUME_v1/DayDream
 
 ```mermaid
 graph LR;
-    A[UVC Thermal CAM]-->|USBケーブル|PiZ2;
+    A[サーマルユニット]-->|USBケーブル|PiZ2;
     PiZ2-->|40pin GPIO|基板;
     基板-->|任意の長さで作成したハーネス|LCD;
 ```
