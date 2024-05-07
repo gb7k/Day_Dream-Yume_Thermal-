@@ -141,7 +141,7 @@ dietpi-configからPerformance Optionに入りOverclockingを選択、highを選
 また、CPU Governorを選択しperformanceを選択する。
 
 ### パッケージのインストール
-インストール後、dietPi-Softwareを使用して以下のパッケージを導入する。  
+オーバークロックの設定後、dietPi-Softwareを使用して以下のパッケージを導入する。  
 
 |パッケージ番号|説明|
 | --- | --- |
