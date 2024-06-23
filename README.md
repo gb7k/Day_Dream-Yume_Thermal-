@@ -161,7 +161,7 @@ dietpi-configからPerformance Optionに入りOverclockingを選択、highを選
 pipコマンドでST7789のパッケージをインストールする。  
 ~~面倒~~これしか使わないのでbreak-system-packagesを使っている。  
 
-`pip3 install --break-system-packages st7789`
+`pip3 install --break-system-packages st7789==1.0.0`
 
 ### ファイルのコピー
 適当な場所にファイル一式をコピーする。  
