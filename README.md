@@ -180,7 +180,7 @@ pipコマンドでST7789のパッケージをインストールする。
 Raspberry Piは実行中に電源を落とすと起動不能になるため、電源ボタンを設ける必要がある。
 そのため、基板上のPowerボタンを3秒間押し続けると自動でシャットダウンを実施させるために/boot/config.txtを編集し最終行に以下を加える。
 
-`dtoverlay=gpio-shutdonw,gpio_pin=2,debounce=3000`
+`dtoverlay=gpio-shutdown,gpio_pin=2,debounce=3000`
 
 ### 自動起動設定
 RPi上でUVCカメラとしてサーマルユニットを使用する時、uvcvideoドライバをquirks=0x02でロードする必要がある。  
