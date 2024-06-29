@@ -153,6 +153,7 @@ dietpi-configからPerformance Optionに入りOverclockingを選択、highを選
 
 |パッケージ名|説明|
 | --- | --- |
+|dbus|シャットダウンボタンの操作に必要|
 |python3-opencv|取得画像の操作に使用|
 |python3-numpy|取得画像の操作に使用|
 |python3-pip|多分インストール済|
