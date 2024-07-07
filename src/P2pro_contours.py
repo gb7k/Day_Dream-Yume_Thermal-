@@ -106,7 +106,7 @@ while(cap.isOpened()):
         #time1=time.time()
         # Convert (196,256,2) -> (196,256)
         image_r = np.take(frame,[0],axis=2).astype(np.uint16)+np.take(frame,[1],axis=2).astype(np.uint16)*255
-        image = image_r.reshape(196,256)
+        image = image_r.reshape(192,256)
 
         # Crop 256x196 -> 192x192
         #image = image[0:192,32:224]       #2.8-12mm Lens
