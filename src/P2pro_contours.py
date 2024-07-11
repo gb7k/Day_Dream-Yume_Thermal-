@@ -154,7 +154,7 @@ while(cap.isOpened()):
         image = cv2.copyMakeBorder(image,1,1,1,1,cv2.BORDER_CONSTANT,value=[255,255,255])
 
         #Rotate
-        image = cv2.rotate(image,cv2.ROTATE_90_COUNTERCLOCKWISE)
+        image = cv2.rotate(image,cv2.ROTATE_180)
         #Flip LR
         image = cv2.flip(image,0)
 
