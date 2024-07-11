@@ -137,7 +137,7 @@ while(cap.isOpened()):
                 image = cv2.bitwise_not(image)
 
         #Rotate
-        image = cv2.rotate(image,cv2.ROTATE_90_COUNTERCLOCKWISE)
+        image = cv2.rotate(image,cv2.ROTATE_180)
         #Flip LR
         image = cv2.flip(image,0)
 
